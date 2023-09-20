@@ -29,5 +29,10 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+void display(struct Node* top) ;
+void pint(stack_t **stack, unsigned int line_number);
+int pop(struct Node** top);
+void push(struct Node** top, int data);
+int isEmpty(struct Node* top);
 
 #endif

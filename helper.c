@@ -20,14 +20,15 @@ int isEmpty(struct Node* top) {
 }
 
 
-void push(struct Node** top, int data) {
+void push(struct Node** top, int data)
+{
     struct Node* node = newNode(data);
     node->next = *top;
     *top = node;
     printf("%d pushed to stack\n", data);
 }
 
-int pop(struct Node** top) 
+int pop(struct Node** top)
 {
 	struct Node* temp;
 	int popped;
@@ -67,20 +68,22 @@ void display(struct Node* top)
     printf("\n");
 }
 
-int main() {
-    struct Node* top = NULL;
-
-    push(&top, 10);
-    push(&top, 20);
-    push(&top, 30);
-
-    printf("Elements in stack: ");
-    display(top);
-
-    printf("Popped element: %d\n", pop(&top));
-    
-    printf("Elements in stack after popping: ");
-    display(top);
-
-    return 0;
+ int main(int argc, char **argv)
+{
+   if (argc > 1) {
+        for (int i = 1; i < argc; i++) {
+            int value = atoi(argv[i]);
+            push(value);
+        }
+        
+        printf("Elements in stack: ");
+        display();
+        
+        pop();
+        
+        printf("Elements in stack after popping: ");
+        display();
+    } else {
+        printf("No arguments provided\n");
+    }
 }
