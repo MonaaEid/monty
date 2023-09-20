@@ -19,10 +19,11 @@ int main(int argc, char **argv)
         
        /* pop();*/
         
-        printf("Elements in stack after popping: ");
+       /*printf("Elements in stack after popping: ");*/
         /*display();*/
-    } else {
-        printf("No arguments provided\n");
+    } else if (argv[1]){
+        fprintf(stderr, "L<%s>: usage: push integer\n", argv[1]);
+        return(EXIT_FAILURE);
     }
     return (0);
 }

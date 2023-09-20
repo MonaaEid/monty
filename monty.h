@@ -44,6 +44,7 @@ void display(struct Node* top) ;
 void pint(stack_t **stack, unsigned int line_number);
 int pop(struct Node** top);
 void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
 int isEmpty(struct Node* top);
 void handle_opcode(char *opcode, stack_t **stack, unsigned int line_number);
 
