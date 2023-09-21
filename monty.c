@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 	FILE *file;
 	char *line = NULL;
 	/*size_t len = 0;*/
-	ssize_t nread;
+	/*ssize_t nread;*/
 	unsigned int line_number = 0;
 	stack_t *stack = NULL;
 
@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 	}
 	/*nread = getline(&line, &len, file);*/
 	/*nread = getdelim(&line, &len, 36, file);*/
-	while (nread != -1)
+	while (1)
 	{
 		line_number++;
 		handle_opcode(argv[0], &stack,line_number);
