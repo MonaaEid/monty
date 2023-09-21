@@ -14,8 +14,9 @@ int main(int argc, char **argv)
 	FILE *file;
 	char *line = NULL;
 	size_t len = 0;
-	ssize_t nread;
+	/*ssize_t nread;*/
 	unsigned int line_number = 0;
+	ssize_t read_line = 1;
 	stack_t *stack = NULL;
 
 	if (argc != 2)
@@ -31,16 +32,20 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Error: Can’t open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	nread = getline(&line, &len, file);
 	/*nread = getdelim(&line, &len, 36, file);*/
-	while (nread != -1)
+	while (read_line > 0)
 	{
+		read_line = getline(&line, &len, file);
 		line_number++;
-		handle_opcode(argv[0], &stack, line_number);
+		if (read_line > 0)
+		{
+			handle_opcode(argv[0], &stack, line_number);
+		
 	    /*execute(line, &stack, line_number);*/
+	}
 	}
 	free(line);
 	fclose(file);
 	/*free_stack(&stack);*/
 	return (0);
-	}
+}
