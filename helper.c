@@ -6,30 +6,6 @@
 
 void m_push(stack_t **stack, unsigned int line_number)
 {
-	if (isdigit(line_number))
-	{
-		stack_t *node = malloc(sizeof(stack_t));
-
-		if (node == NULL)
-		{
-			printf("Error: malloc failed\n");
-			exit(EXIT_FAILURE);
-		}
-		node->n = line_number;
-		node->prev = NULL;
-		node->next = *stack;
-		if (*stack != NULL)
-		{
-			(*stack)->prev = node;
-		}
-		*stack = node;
-		printf("%d\n", line_number);
-	}
-	else
-	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}
 }
 void m_pall(stack_t **stack, unsigned int line_number)
 {
