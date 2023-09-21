@@ -12,8 +12,8 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		/*fprintf(stderr, "USAGE: monty file\n");*/
-        fprintf(stderr, "L%s: usage: push integer\n", argv[2]);
+		fprintf(stderr, "USAGE: monty file\n");
+       /* fprintf(stderr, "L%s: usage: push integer\n", argv[2]);*/
 
 		exit(EXIT_FAILURE);
 	}
@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 			handle_opcode(line, &stack, line_number);
 		
 	    /*execute(line, &stack, line_number);*/
-	}
+		}
 	}
 	free(line);
 	fclose(file);
