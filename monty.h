@@ -1,5 +1,6 @@
 #ifndef MONTY_H_
 #define MONTY_H_
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
@@ -10,7 +11,6 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 
-#define BUFFER_SIZE 1024
 struct Node {
     int data;
     struct Node* next;

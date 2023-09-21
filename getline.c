@@ -1,4 +1,6 @@
 #include "monty.h"
+#define BUFFER_SIZE 1024
+
 /**
  * _getline - function that is used to read
  * a string or a line from an input stream.
@@ -35,7 +37,9 @@ ssize_t _getline(char **lineptr, size_t *n, FILE *stream)
 
 	if (len >= *n)
 	{
-		temp = realloc(*lineptr, len + 1);
+        free(*lineptr);
+        temp = malloc(len + 1);
+		/*temp = realloc(*lineptr, len + 1);*/
 		if (temp == NULL)
 			return (-1);
 		*lineptr = temp;
