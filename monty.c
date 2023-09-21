@@ -11,26 +11,36 @@
 
 int main(int argc, char **argv)
 {
-    int i;
-    int value;
-    struct stack_s* top = NULL;
-    if (argc > 1)
-    {
-        for (i = 1; i < argc; i++) {
-            value = atoi(argv[i]);
-            push(&top, value);
-        }
-        
-        printf("Elements in stack: ");
-        /*display();*/
-        
-       /* pop();*/
-        
-       /*printf("Elements in stack after popping: ");*/
-        /*display();*/
-    } else if (argc <= 1){
+	FILE *file;
+	char *line = NULL;
+	size_t len = 0;
+	ssize_t nread;
+	unsigned int line_number = 0;
+	stack_t *stack = NULL;
+
+	if (argc != 2)
+	{
+		/*fprintf(stderr, "USAGE: monty file\n");*/
         fprintf(stderr, "L<%s>: usage: push integer\n", argv[1]);
-        return(EXIT_FAILURE);
-    }
-    return (0);
-}
+
+		exit(EXIT_FAILURE);
+	}
+	file = fopen(argv[1], "r");
+	if (file == NULL)
+	{
+		fprintf(stderr, "Error: Can’t open file %s\n", argv[1]);
+		exit(EXIT_FAILURE);
+	}
+	nread = getline(&line, &len, file);
+	/*nread = getdelim(&line, &len, 36, file);*/
+	while (nread != -1)
+	{
+		line_number++;
+		handle_opcode(argv[0], &stack, line_number);
+	    /*execute(line, &stack, line_number);*/
+	}
+	free(line);
+	fclose(file);
+	/*free_stack(&stack);*/
+	return (0);
+	}
