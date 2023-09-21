@@ -26,13 +26,6 @@ typedef struct stack_s
 	struct stack_s *next;
 } stack_t;
 
-typedef struct bus_s
-{
-	char *arg;
-	FILE *file;
-	char *content;
-	int lifi;
-}  bus_t;
 
 /**
  * struct instruction_s - opcode and its function
@@ -48,12 +41,11 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern bus_t bus;
 
 void free_stack(stack_t *head);
 void m_pint(stack_t **stack, unsigned int line_number);
 void m_push(stack_t **stack, unsigned int line_number);
-void pall(stack_t **stack, unsigned int line_number);
+void m_pall(stack_t **stack, unsigned int line_number);
 
 void handle_opcode(char *opcode, stack_t **stack, unsigned int line_number);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);

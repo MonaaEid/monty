@@ -31,6 +31,17 @@ void m_push(stack_t **stack, unsigned int line_number)
 	}
 	/*printf("%d pushed to stack\n", line_number);*/
 }
+void m_pall(stack_t **stack, unsigned int line_number)
+{
+    stack_t *temp = *stack;
+	(void)line_number;
+
+    while (temp != NULL)
+    {
+        printf("%d\n", temp->n);
+        temp = temp->next;
+    }
+}
 void m_pint(stack_t **stack, unsigned int line_number)
 {
 	if (*stack == NULL)
@@ -45,6 +56,8 @@ void handle_opcode(char *opcode, stack_t **stack, unsigned int line_number)
 	instruction_t instructions[] = {
 		{"push", m_push},
 		{"pint", m_pint},
+		{"pall", m_pall},
+
 	};
 	unsigned int i;
 
