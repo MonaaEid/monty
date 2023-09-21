@@ -13,8 +13,8 @@ int main(int argc, char **argv)
 {
 	FILE *file;
 	char *line = NULL;
-	/*size_t len = 0;*/
-	/*ssize_t nread;*/
+	size_t len = 0;
+	ssize_t nread;
 	unsigned int line_number = 0;
 	stack_t *stack = NULL;
 
@@ -29,9 +29,9 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Error: Can’t open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	/*nread = getline(&line, &len, file);*/
+	nread = getline(&line, &len, file);
 	/*nread = getdelim(&line, &len, 36, file);*/
-	while (1)
+	while (nread != -1)
 	{
 		line_number++;
 		handle_opcode(argv[0], &stack,line_number);

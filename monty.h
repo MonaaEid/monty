@@ -54,6 +54,6 @@ void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 int isEmpty(struct Node* top);
 void handle_opcode(char *opcode, stack_t **stack, unsigned int line_number);
-ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
+ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 
 #endif
