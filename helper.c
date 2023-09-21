@@ -43,9 +43,9 @@ void m_pint(stack_t **stack, unsigned int line_number)
 void handle_opcode(char *opcode, stack_t **stack, unsigned int line_number)
 {
 	instruction_t instructions[] = {
-	{"push", m_push},
-	{"pint", m_pint},
-		};
+		{"push", m_push},
+		{"pint", m_pint},
+	};
 	unsigned int i;
 
 	for (i = 0; i < sizeof(instructions) / sizeof(instructions[0]); i++)
@@ -58,3 +58,4 @@ void handle_opcode(char *opcode, stack_t **stack, unsigned int line_number)
 	}
 	printf("Unknown opcode: %s\n", opcode);
 }
+
