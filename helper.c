@@ -1,8 +1,5 @@
 #include "monty.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
+
 /*void opcode_function(stack_t **stack, unsigned int line_number)*/
 
 
