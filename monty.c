@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 	while (nread != -1)
 	{
 		line_number++;
-		handle_opcode(argv[0], &stack,line_number);
+		handle_opcode(argv[0], &stack, line_number);
 	    /*execute(line, &stack, line_number);*/
 	}
 	free(line);
