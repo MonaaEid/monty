@@ -30,7 +30,8 @@ int main(int argc, char **argv)
 		line_number++;
 		if (read_line > 0)
 		{
-			handle_opcode(line, &stack, line_number);
+			_execute(line, &stack, line_number, file);
+			/*handle_opcode(line, &stack, line_number);*/
 	    /*execute(line, &stack, line_number);*/
 		}
 	}
