@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		/*fprintf(stderr, "USAGE: monty file\n");*/
-        fprintf(stderr, "L<%s>: usage: push integer\n", argv[1]);
+        fprintf(stderr, "L<%s>: usage: push integer\n", argv[2]);
 
 		exit(EXIT_FAILURE);
 	}
