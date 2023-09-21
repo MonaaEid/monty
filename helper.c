@@ -27,15 +27,14 @@ void m_push(stack_t **stack, unsigned int line_number)
 	}
 	else
 	{
-	fprintf(stderr, "L%u: usage: push integer\n", line_number);
-	exit(EXIT_FAILURE);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
 	}
-	/*printf("%d pushed to stack\n", line_number);*/
 }
 void m_pall(stack_t **stack, unsigned int line_number)
 {
     stack_t *temp = *stack;
-	(void)line_number;
+    (void)line_number;
 
     while (temp != NULL)
     {
