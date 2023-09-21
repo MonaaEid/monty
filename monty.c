@@ -1,5 +1,4 @@
 #include "monty.h"
-#include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
 #include <unistd.h>
@@ -8,7 +7,7 @@
 #include <limits.h>
 #include <sys/wait.h>
 #include <sys/types.h>
-
+#include <stdio.h>
 int main(int argc, char **argv)
 {
 	FILE *file;
