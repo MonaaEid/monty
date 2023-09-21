@@ -10,12 +10,6 @@
 #include <limits.h>
 #include <sys/wait.h>
 #include <sys/types.h>
-
-struct Node {
-    int data;
-    struct Node* next;
-};
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -47,12 +41,10 @@ typedef struct instruction_s
 } instruction_t;
 
 
-void display(struct Node* top) ;
-void pint(stack_t **stack, unsigned int line_number);
-int pop(struct Node** top);
-void push(stack_t **stack, unsigned int line_number);
+void m_pint(stack_t **stack, unsigned int line_number);
+void m_push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
-int isEmpty(struct Node* top);
+
 void handle_opcode(char *opcode, stack_t **stack, unsigned int line_number);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 

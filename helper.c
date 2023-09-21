@@ -5,10 +5,8 @@
 #include <ctype.h>
 /*void opcode_function(stack_t **stack, unsigned int line_number)*/
 
- instruction_t instructions[] = {
-    {"push", push},
-    };
-void push(stack_t **stack, unsigned int line_number) {
+
+void m_push(stack_t **stack, unsigned int line_number) {
     if (isdigit(line_number))
     {
         stack_t *node = malloc(sizeof(stack_t));
@@ -29,7 +27,7 @@ void push(stack_t **stack, unsigned int line_number) {
     exit(EXIT_FAILURE);
     /*printf("%d pushed to stack\n", line_number);*/
 }
-void pint(stack_t **stack, unsigned int line_number)
+void m_pint(stack_t **stack, unsigned int line_number)
 {
 	if (*stack == NULL)
 	{
@@ -41,6 +39,10 @@ void pint(stack_t **stack, unsigned int line_number)
 }
 void handle_opcode(char *opcode, stack_t **stack, unsigned int line_number)
 {
+    instruction_t instructions[] = {
+    {"push", m_push},
+    {"pint", m_pint},
+    };
     unsigned int i;
     for (i = 0; i < sizeof(instructions) / sizeof(instructions[0]); i++)
     {
