@@ -1,6 +1,7 @@
 #include "monty.h"
 
 /*void opcode_function(stack_t **stack, unsigned int line_number)*/
+/**/
 
 
 void m_push(stack_t **stack, unsigned int line_number)

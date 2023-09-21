@@ -1,5 +1,5 @@
 #include "monty.h"
-
+/**/
 void free_stack(stack_t *head)
 {
 	stack_t *aux;
