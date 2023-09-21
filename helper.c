@@ -5,6 +5,9 @@
 #include <ctype.h>
 /*void opcode_function(stack_t **stack, unsigned int line_number)*/
 
+ instruction_t instructions[] = {
+    {"push", push},
+    };
 void push(stack_t **stack, unsigned int line_number) {
     if (isdigit(line_number))
     {
@@ -36,4 +39,17 @@ void pint(stack_t **stack, unsigned int line_number)
 
 	printf("%d\n", (*stack)->n);
 }
+void handle_opcode(char *opcode, stack_t **stack, unsigned int line_number)
+{
+    unsigned int i;
+    for (i = 0; i < sizeof(instructions) / sizeof(instructions[0]); i++)
+    {
+        if (strcmp(opcode, instructions[i].opcode) == 0)
+        {
+            instructions[i].f(stack, line_number);
+            return;
+        }
+    }
 
+    printf("Unknown opcode: %s\n", opcode);
+}
