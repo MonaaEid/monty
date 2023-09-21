@@ -70,6 +70,6 @@ void handle_opcode(char *opcode, stack_t **stack, unsigned int line_number)
 			return;
 		}
 	}
-	printf("Unknown opcode: %s\n", opcode);
+	printf("L%d: unknown instruction %s\n", line_number, opcode);
 }
 
