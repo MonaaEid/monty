@@ -12,7 +12,7 @@ void m_push(stack_t **stack, unsigned int line_number)
 
 		if (node == NULL)
 		{
-			printf("Error: malloc failed\n");
+			fprintf(stderr, "Error: malloc failed\n");
 			exit(EXIT_FAILURE);
 		}
 		node->n = line_number;
@@ -67,7 +67,7 @@ void handle_opcode(char *filename)
 	unsigned int line_number = 1;
 
 	if (file == NULL) {
-		printf("Error: Cannot open file %s\n", filename);
+		fprintf(stderr, "Error: Cannot open file %s\n", filename);
 		exit(EXIT_FAILURE);
 	}
 
@@ -86,7 +86,7 @@ void handle_opcode(char *filename)
 
 		if (i == sizeof(instructions) / sizeof(instructions[0]))
 		{
-			printf("L%d: unknown instruction %s\n", line_number, opcode);
+			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 			exit(EXIT_FAILURE);
 		}
 
