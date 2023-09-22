@@ -44,13 +44,16 @@ void m_push(stack_t **stack, unsigned int line_number)
 */
 void m_pall(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp = *stack;
+	stack_t *h;
 	(void)line_number;
 
-	while (temp != NULL)
+	h = *stack;
+	if (h == NULL)
+		return;
+	while (h)
 	{
-		printf("%d\n", temp->n);
-		temp = temp->next;
+		printf("%d\n", h->n);
+		h = h->next;
 	}
 }
 /**
