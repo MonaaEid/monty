@@ -10,12 +10,12 @@
 
 void m_push(stack_t **stack, unsigned int line_number, int value)
 {
-	if(!isdigit(value))
+	if(isdigit(value))
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	if (isdigit(value))
+	if (!isdigit(value))
 	{
 		stack_t *node = malloc(sizeof(stack_t));
 
@@ -101,4 +101,5 @@ void m_pint(stack_t **stack, unsigned int line_number)
                 fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
                 exit(EXIT_FAILURE);
         }
-} 
+	printf("%d\n", (*stack)->n);
+}
