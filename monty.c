@@ -31,7 +31,8 @@ int main(int argc, char **argv)
 		if (read_line > 0)
 		{
 		/*_execute(line, &stack, line_number, file);*/
-			handle_opcode(line, &stack, line_number);
+		/*	handle_opcode(line, &stack, line_number);*/
+			handle_opcode(argv[1]);
 	    /*execute(line, &stack, line_number);*/
 		}
 	}
