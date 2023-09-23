@@ -27,30 +27,24 @@ void handle_opcode(char *filename)
 			{"pop", m_pop},
 			{"add", m_add},
 			{"nop", m_nop},
-
-
-
-
 		};
 	       	unsigned int i;
-		
+		if (strncmp(opcode, "push", 5) == 0)
+		{
+			m_push(&stack, line_number, value);     }
 		for (i = 0; i < sizeof(instructions) / sizeof(instructions[0]); i++)
 		{
-			if (strncmp(opcode, "push ", 5) == 0)
-			{
-				m_push(&stack, line_number, value);	}
 			if (strcmp(opcode, instructions[i].opcode) == 0)
 			{
 				instructions[i].f(&stack, line_number);
+				return;
 			}
 			
-			if (i == sizeof(instructions) / sizeof(instructions[0]))
-			{
-				printf("L%d: unknown instruction %s\n", line_number, opcode);
-				exit(EXIT_FAILURE);	}
 		}
 		line_number++;
 	}
+	printf("L%d: unknown instruction %s\n", line_number, opcode);
+        exit(EXIT_FAILURE);
 	fclose(file);
 }
 

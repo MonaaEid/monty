@@ -76,17 +76,14 @@ void mm_push(stack_t **stack, unsigned int line_number)
 */
 void m_pall(stack_t **stack, unsigned int line_number)
 {
-        stack_t *h;
-        (void)line_number;
-
-        h = *stack;
-        if (h == NULL)
-                return;
-        while (h)
-        {
-                printf("%d\n", h->n);
-                h = h->next;
-        }
+	stack_t *temp = *stack;
+	(void)line_number;
+	
+	while (temp != NULL)
+	{
+		printf("%d\n", temp->n);
+		temp = temp->next;
+	}
 }
 /**
  * m_pint - prints the stack
