@@ -1,5 +1,4 @@
 #include "monty.h"
-#include <ctype.h>
 /*void opcode_function(stack_t **stack, unsigned int line_number)*/
 /**
  * m_push - prints the stack
