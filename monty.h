@@ -52,7 +52,6 @@ void m_pop(stack_t **stack, unsigned int line_number);
 void m_swap(stack_t **stack, unsigned int line_number);
 void m_add(stack_t **stack, unsigned int line_number);
 void m_nop(stack_t **stack, unsigned int line_number);
-int isascii(int c);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 /*void handle_opcode(char *opcode, stack_t **stack, unsigned int line_number);*/
 void handle_oopcode(char *filename);
