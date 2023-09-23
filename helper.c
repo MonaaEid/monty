@@ -23,12 +23,20 @@ void handle_opcode(char *filename)
 		instruction_t instructions[] = {
 			{"pint", m_pint},
 			{"pall", m_pall},
+			{"swap", m_swap},
+			{"pop", m_pop},
+			{"add", m_add},
+			{"nop", m_nop},
+
+
+
+
 		};
 	       	unsigned int i;
 		
 		for (i = 0; i < sizeof(instructions) / sizeof(instructions[0]); i++)
 		{
-			if (strncmp(opcode, "push", 5) == 0)
+			if (strncmp(opcode, "push ", 5) == 0)
 			{
 				m_push(&stack, line_number, value);	}
 			if (strcmp(opcode, instructions[i].opcode) == 0)
