@@ -23,7 +23,6 @@ void handle_opcode(char *filename)
 		instruction_t instructions[] = {
 			{"pint", m_pint},
 			{"pall", m_pall},
-			{"swap", m_swap},
 			{"pop", m_pop},
 			{"add", m_add},
 			{"nop", m_nop},
