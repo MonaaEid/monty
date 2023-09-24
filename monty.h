@@ -52,6 +52,16 @@ void m_pop(stack_t **stack, unsigned int line_number);
 void m_swap(stack_t **stack, unsigned int line_number);
 void m_add(stack_t **stack, unsigned int line_number);
 void m_nop(stack_t **stack, unsigned int line_number);
+void m_sub(stack_t **stack, unsigned int line_number);
+void m_div(stack_t **stack, unsigned int line_number);
+void m_mul(stack_t **stack, unsigned int line_number);
+void m_mod(stack_t **stack, unsigned int line_number);
+/*void pchar_op(stack_t **stack, unsigned int line_number);*/
+void pstr_op(stack_t **stack, unsigned int line_number);
+void m_rotl(stack_t **stack, unsigned int line_number);
+void m_rotr(stack_t **stack, unsigned int line_number);
+
+
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 /*void handle_opcode(char *opcode, stack_t **stack, unsigned int line_number);*/
 void handle_oopcode(char *filename);
