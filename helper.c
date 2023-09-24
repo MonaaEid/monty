@@ -30,18 +30,15 @@ void handle_opcode(char *filename)
 		if (strncmp(opcode, "push", 5) == 0)
 		{
 			m_push(&stack, line_number, value);	}
-		else
+		for (i = 0; i < sizeof(instructions) / sizeof(instructions[0]); i++)
 		{
-			for (i = 0; i < sizeof(instructions) / sizeof(instructions[0]); i++)
+			if (strcmp(opcode, instructions[i].opcode) == 0)
 			{
-				if (strcmp(opcode, instructions[i].opcode) == 0)
+				instructions[i].f(&stack, line_number);	}
+				if (i == sizeof(instructions) / sizeof(instructions[0]))
 				{
-					instructions[i].f(&stack, line_number);	}
-					if (i == sizeof(instructions) / sizeof(instructions[0]))
-					{
-						fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
-						exit(EXIT_FAILURE);	}
-			}
+					fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
+					exit(EXIT_FAILURE);	}
 		}
 		line_number++;
 	}
