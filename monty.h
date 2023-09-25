@@ -63,8 +63,8 @@ void m_rotr(stack_t **stack, unsigned int line_number);
 
 
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
-/*void handle_opcode(char *opcode, stack_t **stack, unsigned int line_number);*/
-void handle_oopcode(char *filename);
+void handle_oopcode(char *filenam);
+/*void handle_oopcode(char *filename);*/
 void handle_opcode(char *filename);
 
 #endif

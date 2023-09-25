@@ -83,6 +83,7 @@ void m_pall(stack_t **stack, unsigned int line_number)
 	while (temp != NULL)
 	{
 		printf("%d\n", temp->n);
+		/*printf("mmmmmmmmmmmmmmmmmmmmmm");*/
 		temp = temp->next;
 	}
 }

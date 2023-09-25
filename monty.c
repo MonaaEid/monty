@@ -26,7 +26,9 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Error: Can’t open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	handle_opcode(argv[1]);
+	handle_oopcode(argv[1]);
+	    /*execute(line, &stack, line_number);*/
+	/*handle_opcode(argv[1]);*/
 	free(line);
 	fclose(file);
 	free_stack(stack);
